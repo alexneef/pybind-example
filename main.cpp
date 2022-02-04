@@ -1,9 +1,18 @@
 #include <iostream>
+#include <pybind11/pybind11.h>
+
+namespace py = pybind11;
 
 int say(const char* str)
 {
     std::cout << str << std::endl;
     return 0;
+}
+
+PYBIND11_MODULE(luxon, m) {
+m.doc() = "pybind11 say example plugin"; // optional module docstring
+
+m.def("add", &add, "A function that adds two numbers");
 }
 
 int main() {
