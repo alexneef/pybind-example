@@ -1,9 +1,11 @@
 #include <iostream>
 
-int say(char* str)
+int say(const char* str)
 {
     std::cout << str << std::endl;
+    return 0;
 }
+
 int main() {
     say("Hello, World!");
     return 0;
